@@ -1,13 +1,2 @@
-"use strict";
-
-var _dotenv = _interopRequireDefault(require("dotenv"));
-
-var _Server = _interopRequireDefault(require("./Server"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-_dotenv.default.config();
-
-var newServer = new _Server.default();
-newServer.listen();
+"use strict";var _interopRequireDefault=require("@babel/runtime/helpers/interopRequireDefault"),_dotenv=_interopRequireDefault(require("dotenv")),_Server=_interopRequireDefault(require("./Server"));_dotenv["default"].config();var newServer=new _Server["default"];newServer.listen();
 //# sourceMappingURL=app.js.map

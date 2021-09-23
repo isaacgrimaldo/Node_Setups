@@ -9,7 +9,22 @@
                 }
             }
             
-        ]
+        ],
+        ["minify",{
+            "mangle": {
+                "exclude": ["MyCustomError"]
+              },
+              "keepFnName": true
+            }
+     ]
+    ],
+    "plugins":[
+        "transform-minify-booleans",
+        "transform-simplify-comparison-operators",
+        "transform-merge-sibling-variables",
+        "@babel/plugin-transform-member-expression-literals",
+        "@babel/plugin-transform-runtime",
+        "@babel/plugin-syntax-throw-expressions"
     ],
     "sourceMaps":true
 
