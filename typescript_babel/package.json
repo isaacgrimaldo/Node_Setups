@@ -1,0 +1,28 @@
+{
+  "name": "typescript_babel",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "type-check": "tsc --noEmit",
+    "type-check:watch": "npm run type-check -- --watch",
+    "start": "run-p -l type-check start:dev",
+    "start:dev": "nodemon --exec babel-node --extensions \".ts\" src/index.ts",
+    "clean": "rimraf dist",
+    "build:prod": "npm run clean && babel src -d dist --ignore=\"./src/**/*.spec.ts\" --extensions \".ts\" --source-maps",
+    "build": "run-p -l type-check build:prod"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.15.7",
+    "@babel/core": "^7.15.5",
+    "@babel/node": "^7.15.4",
+    "@babel/preset-env": "^7.15.6",
+    "@babel/preset-typescript": "^7.15.0",
+    "nodemon": "^2.0.13",
+    "npm-run-all": "^4.1.5",
+    "rimraf": "^3.0.2"
+  }
+}
