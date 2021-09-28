@@ -1,3 +1,33 @@
 {
-    "presets": ["@babel/preset-env", "@babel/preset-typescript"]
+    "presets": [
+        [
+            "@babel/preset-env", 
+            {
+                "targets":{
+                    "node":"current",
+                    "esmodules": true
+                }
+            }
+            
+        ],
+        "@babel/preset-typescript",
+        ["minify",{
+            "mangle": {
+                "exclude": ["MyCustomError"]
+              },
+              "keepFnName": true
+            }
+     ]
+    ],
+    "plugins":[
+        "transform-minify-booleans",
+        "transform-simplify-comparison-operators",
+        "transform-merge-sibling-variables",
+        "@babel/plugin-transform-member-expression-literals",
+        "@babel/plugin-transform-runtime",
+        "@babel/plugin-syntax-throw-expressions"
+    ],
+    "sourceMaps":true
+
 }
+

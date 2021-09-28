@@ -1,7 +1,6 @@
-const sales:Number[] = [ 200 , 500 , 700 ]
-const message = `Sales in junuary ${sales[0]}`;
-const hello:string ='df';
-const lola='Hello lola'
+import dotenv from 'dotenv';
+import Server from './Server';
+dotenv.config();
 
-console.log(message);
-
+const newServer =  new Server();
+newServer.listen();
