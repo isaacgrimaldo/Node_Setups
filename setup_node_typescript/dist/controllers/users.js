@@ -4,38 +4,38 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.deletUsers = exports.uptUsers = exports.postUsers = exports.getUsers = void 0;
-var getUsers = function (req, res) {
-    var _a = req.params, id = _a.id, nickname = _a.nickname;
+const getUsers = (req, res) => {
+    const { id, nickname } = req.params;
     return res.status(200).json({
         msg: 'Hello Word',
-        id: id,
-        nickname: nickname
+        id,
+        nickname
     });
 };
 exports.getUsers = getUsers;
-var postUsers = function (req, res) {
-    var body = req.body;
+const postUsers = (req, res) => {
+    const { body } = req;
     return res.status(201).json({
         msg: 'created user',
-        body: body
+        body
     });
 };
 exports.postUsers = postUsers;
-var uptUsers = function (req, res) {
-    var params = req.params, body = req.body;
-    var id = params.id;
+const uptUsers = (req, res) => {
+    const { params, body } = req;
+    const { id } = params;
     return res.status(200).json({
         msg: 'update user',
-        id: id,
-        body: body
+        id,
+        body
     });
 };
 exports.uptUsers = uptUsers;
-var deletUsers = function (req, res) {
-    var id = req.params.id;
+const deletUsers = (req, res) => {
+    const { id } = req.params;
     return res.status(200).json({
         msg: 'deleted user',
-        id: id,
+        id,
     });
 };
 exports.deletUsers = deletUsers;

@@ -2,7 +2,6 @@ import dotenv from 'dotenv';
 import Server from './Server';
 dotenv.config();
 
-
 const newServer:Server = new Server();
 newServer.listen();
 
