@@ -1,0 +1,2 @@
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.deletItemById=exports.getItemById=void 0;var _data=require("../DB/data"),getItemById=a=>_data.data.items.filter(b=>b.id===a)[0];exports.getItemById=getItemById;var deletItemById=a=>{var b=_data.data.items.filter(b=>b.id===a)[0],c=_data.data.items.filter(b=>b.id!==a);if(!b)throw new Error("Data-Index");return c};exports.deletItemById=deletItemById;
+//# sourceMappingURL=getItemById.js.map

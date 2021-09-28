@@ -1,0 +1,2 @@
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.data=void 0;var data={items:[{id:0,name:"Papas",date:new Date().getDate()},{id:1,name:"Cerveza",date:new Date().getDate()},{id:2,name:"Sopa",date:new Date().getDate()},{id:3,name:"Verdura",date:new Date().getDate()}]};exports.data=data;
+//# sourceMappingURL=data.js.map
