@@ -1,5 +1,6 @@
 import express from 'express'; 
 import cors from 'cors';
+import { connectionsDataBase } from './db/DB';
 
 class Server {
     constructor(){
@@ -7,12 +8,19 @@ class Server {
         this.app = express();
         this.middleware();
         this.routers();
+        this.connectedDB();
     }
 
     middleware(){
         this.app.use(cors () );
         this.app.use( express.json() );
         this.app.use( express.static('public') );
+    }
+    
+    connectedDB(){
+        connectionsDataBase()
+            .then(() => console.log('connected'))
+            .catch(()=> console.error('Verific your information'));
     }
 
     routers(){
