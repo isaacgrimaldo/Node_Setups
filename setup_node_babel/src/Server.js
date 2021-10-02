@@ -1,5 +1,5 @@
 import express from 'express'; 
-import cors from 'cors'; 
+import cors from 'cors';
 
 class Server {
     constructor(){
@@ -17,17 +17,16 @@ class Server {
 
     routers(){
         this.app.get('/hola',(req , res ) => {
-             res.status(200).send('Hola')
-             console.log('hola')
-        })
+            res.status(200).send('Hola');
+            console.log('hola');
+        });
     }
     
     listen(){
-       this.app.listen( this.PORT , (err) => {
-           if(err)  throw new Error('Server OFFLINE');
-          
-           console.log('Server running on port '+ this.PORT);
-       });
+        this.app.listen( this.PORT , (err) => {
+            if(err)  throw new Error('Server OFFLINE');
+            console.log('Server running on port '+ this.PORT);
+        });
     }
 }
 
