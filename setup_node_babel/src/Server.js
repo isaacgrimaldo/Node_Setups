@@ -1,8 +1,11 @@
 import express from 'express'; 
 import cors from 'cors';
-import { connectionsDataBase } from './db/DB';
+import dotenv from 'dotenv';
 
+import { connectionsDataBase } from './db/DB';
 import Notes from './routes/notes';
+
+dotenv.config();
 
 class Server {
     constructor(){
@@ -24,8 +27,8 @@ class Server {
     
     connectedDB(){
         connectionsDataBase()
-            .then(() => console.log('connected'))
-            .catch(()=> console.error('Verific your information'));
+            .then(console.log('connected to the data_base'))
+            .catch(console.error);
     }
 
     routers(){

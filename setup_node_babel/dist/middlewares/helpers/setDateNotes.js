@@ -1,0 +1,2 @@
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.setDateNotes=void 0;var _express=require("express"),setDateNotes=function setDateNotes(){var a=0<arguments.length&&arguments[0]!==void 0?arguments[0]:_express.request,b=1<arguments.length?arguments[1]:void 0,c=2<arguments.length?arguments[2]:void 0,d=new Date().getTime();a.body.date=d,c()};exports.setDateNotes=setDateNotes;
+//# sourceMappingURL=setDateNotes.js.map
