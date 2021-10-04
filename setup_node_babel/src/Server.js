@@ -2,13 +2,18 @@ import express from 'express';
 import cors from 'cors';
 import { connectionsDataBase } from './db/DB';
 
+import Notes from './routes/notes';
+
 class Server {
     constructor(){
         this.PORT  = process.env.PORT;
         this.app = express();
-        this.middleware();
-        this.routers();
         this.connectedDB();
+        this.middleware();
+        this.paths = {
+            notes:'/api/notes'
+        };
+        this.routers();
     }
 
     middleware(){
@@ -24,10 +29,7 @@ class Server {
     }
 
     routers(){
-        this.app.get('/hola',(req , res ) => {
-            res.status(200).send('Hola');
-            console.log('hola');
-        });
+        this.app.use(this.paths.notes, Notes );
     }
     
     listen(){
