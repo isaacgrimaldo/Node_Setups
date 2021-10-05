@@ -1,5 +1,5 @@
 /**
- *  path = api/notes
+ *  path = /api/notes
  */
 
 import { Router } from 'express';

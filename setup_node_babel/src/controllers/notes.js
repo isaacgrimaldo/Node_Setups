@@ -4,6 +4,7 @@ import notes from '../collectionsMDB/notes';
 
 export const notesControllers = {
     getNotes: async ( _ , res = response) => {
+        
         try {
             const [ count ,  allNotes  ] = await Promise.all([
                 notes.count(),
@@ -59,7 +60,7 @@ export const notesControllers = {
                     ? res.status(200).json({
                         note
                     })
-                    :  res.status(401).send('bad-request');          
+                    :  res.status(404).json('NOT-FIND');          
             })
             .catch((err) =>{
                 console.log(err);

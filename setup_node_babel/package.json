@@ -1,15 +1,16 @@
 {
   "name": "septup_node_babel",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "proyect made with node.js used babel",
   "main": "app.js",
   "scripts": {
-    "build": "babel src -d dist --source-maps ",
+    "build": "babel src -d dist  --source-maps  --ignore src/test/ ",
     "dev": "cross-env NODE_ENV=development nodemon --exec babel-node ./src/app.js",
-    "start": "cross_env NODE_END=production node ./dist/app.js",
+    "start": "cross-env NODE_ENV=production node ./dist/app.js",
     "eslint": "eslint .",
     "clean": "rimraf dist build ",
-    "test": "cross_env NODE_NEV=test jest --verbose"
+    "test": "cross-env NODE_ENV=test jest  --silent --detectOpenHandles",
+    "test:watch":"npm run test -- --watch"
   },
   "author": "Isaac Grimaldo",
   "license": "ISC",
@@ -40,6 +41,6 @@
     "supertest": "^6.1.6"
   },
   "jest": {
-    "jestEnvironment": "node"
+      "testEnvironment": "node"
   }
 }

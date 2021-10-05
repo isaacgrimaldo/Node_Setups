@@ -1,2 +1,2 @@
-"use strict";var _interopRequireDefault=require("@babel/runtime/helpers/interopRequireDefault"),_dotenv=_interopRequireDefault(require("dotenv")),_Server=_interopRequireDefault(require("./Server"));_dotenv["default"].config();var newServer=new _Server["default"];newServer.listen();
+"use strict";var _interopRequireDefault=require("@babel/runtime/helpers/interopRequireDefault");Object.defineProperty(exports,"__esModule",{value:!0}),exports.newServer=void 0;var _dotenv=_interopRequireDefault(require("dotenv")),_Server=_interopRequireDefault(require("./Server"));_dotenv["default"].config();var newServer=new _Server["default"];exports.newServer=newServer,newServer.listen();
 //# sourceMappingURL=app.js.map

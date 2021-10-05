@@ -10,9 +10,10 @@ dotenv.config();
 class Server {
     constructor(){
         this.PORT  = process.env.PORT;
+        this.server;
         this.app = express();
         this.connectedDB();
-        this.middleware();
+        this.middleware(); 
         this.paths = {
             notes:'/api/notes'
         };
@@ -36,11 +37,16 @@ class Server {
     }
     
     listen(){
-        this.app.listen( this.PORT , (err) => {
+        this.server =  this.app.listen( this.PORT , (err) => {
             if(err)  throw new Error('Server OFFLINE');
             console.log('Server running on port '+ this.PORT);
         });
     }
+
+    close(){
+        this.server.close();
+    }
+
 }
 
 
