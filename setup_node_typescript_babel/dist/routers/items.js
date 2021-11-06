@@ -1,2 +1,0 @@
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports["default"]=void 0;var _express=require("express"),_items=require("../controllers/items"),router=(0,_express.Router)();router.get("/",_items.iteamsControllers.getItems),router.get("/:id",_items.iteamsControllers.getItemById),router["delete"]("/:id",_items.iteamsControllers.deleteItemById);var _default=router;exports["default"]=_default;
-//# sourceMappingURL=items.js.map
