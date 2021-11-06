@@ -3,11 +3,18 @@
   "version": "1.0.0",
   "description": "proyect made with node.js used babel",
   "main": "app.js",
+  "repository": {
+    "type": "",
+    "url": ""
+  },
   "scripts": {
     "build": "babel src -d dist --source-maps ",
     "dev": "nodemon --exec babel-node ./src/app.js",
     "start": "node ./dist/app.js",
-    "clean": "rimraf dist build "
+    "lint": "eslint . --cache --fix",
+    "prettier": "prettier . --writer",
+    "clean": "rimraf dist build ",
+    "prepare": "husky install"
   },
   "author": "Isaac Grimaldo",
   "license": "ISC",
@@ -29,7 +36,16 @@
     "babel-plugin-transform-minify-booleans": "^6.9.4",
     "babel-plugin-transform-simplify-comparison-operators": "^6.9.4",
     "babel-preset-minify": "^0.5.1",
+    "eslint": "^8.2.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "husky": "^7.0.4",
+    "lint-staged": "^11.2.6",
     "nodemon": "^2.0.12",
+    "prettier": "^2.4.1",
     "rimraf": "^3.0.2"
+  },
+  "lint-staged": {
+    "./src/*.js": "eslint --cache --fix"
   }
 }
